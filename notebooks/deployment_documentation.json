@@ -1,0 +1,74 @@
+{
+  "system_overview": {
+    "name": "Fraud Detection System",
+    "version": "1.0.0",
+    "description": "Real-time fraud detection for e-commerce transactions",
+    "model_type": "GaussianNB",
+    "deployment_date": "2025-07-27"
+  },
+  "requirements": {
+    "python_version": "3.8+",
+    "dependencies": [
+      "pandas",
+      "numpy",
+      "scikit-learn",
+      "joblib",
+      "flask",
+      "requests",
+      "matplotlib",
+      "seaborn"
+    ],
+    "model_files": [
+      "best_model_logistic_regression.pkl",
+      "scaler_logistic_regression.pkl"
+    ]
+  },
+  "api_endpoints": {
+    "health_check": {
+      "url": "/health",
+      "method": "GET",
+      "description": "System health check"
+    },
+    "predict": {
+      "url": "/predict",
+      "method": "POST",
+      "description": "Predict fraud for transaction",
+      "input_format": "JSON with transaction data",
+      "output_format": "JSON with prediction results"
+    },
+    "stats": {
+      "url": "/stats",
+      "method": "GET",
+      "description": "Get prediction statistics"
+    }
+  },
+  "deployment_steps": [
+    "1. Install required dependencies",
+    "2. Load trained model and scaler",
+    "3. Initialize FraudDetectionPipeline",
+    "4. Start Flask API server",
+    "5. Configure monitoring and alerting",
+    "6. Test endpoints and performance"
+  ],
+  "monitoring": {
+    "metrics": [
+      "Prediction success rate",
+      "Average response time",
+      "Fraud detection rate",
+      "System uptime",
+      "Data drift detection"
+    ],
+    "alerts": [
+      "High fraud rate (>30%)",
+      "Low fraud rate (<1%)",
+      "System errors",
+      "Data drift detected"
+    ]
+  },
+  "maintenance": {
+    "model_retraining": "Every 3 months or when drift detected",
+    "performance_review": "Weekly",
+    "system_updates": "As needed",
+    "backup_strategy": "Daily model and data backups"
+  }
+}
